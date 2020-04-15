@@ -52,4 +52,9 @@ linkedList.traverseForward();
 linkedList.insertAfter(12, 13);
 linkedList.traverseForward();
 
+linkedList.reverseInPlace();
+console.log("Reversed: ");
+linkedList.traverseForward();
+
+
 console.log("DONE...");
