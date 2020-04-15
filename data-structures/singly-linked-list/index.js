@@ -136,6 +136,4 @@ class SinglyLinkedList {
     }
 }
 
-console.log(Node);
-
 module.exports = SinglyLinkedList;
