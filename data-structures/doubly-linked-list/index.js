@@ -43,10 +43,11 @@ class DoublyLinkedList {
         let newNode = new Node(data);
         let current = this.head;
         if (current.data == search) {
-            let temp = current.next;
-            current.next = newNode;
-            newNode.next = temp;
-            newNode.prev = current;
+            // let temp = current.next;
+            // current.next = newNode;
+            // newNode.next = temp;
+            // newNode.prev = current;
+            this.insertAtHead(data);
             return newNode;
         }
 

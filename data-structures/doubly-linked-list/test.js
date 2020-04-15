@@ -21,8 +21,8 @@ function runTest() {
   console.log("found: 2.5: ", found);
   
   
-  linkedList.deleteByData(2);
-  linkedList.traverseForward();
+  //linkedList.deleteByData(2);
+  //linkedList.traverseForward();
 
   found = linkedList.find(1);
   console.log("found: 1: ", found);
