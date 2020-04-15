@@ -1,15 +1,13 @@
 const Node = require("./node");
 
-class DoublyLinkedList {
-    head = null;
-    tail = null;
-
+class CircularLinkedList {
     constructor() {
-
+        this.head = null;
+        this.tail = null;
     }
 
     // add / push data to the end of list
-    append(data) {
+    push(data) {
         let newNode = new Node(data);
         if (this.head === null) {
             this.head = newNode;
@@ -19,6 +17,7 @@ class DoublyLinkedList {
             temp.next = newNode;
             newNode.prev = temp;
             this.tail = newNode;
+            newNode.next = this.head;
         }
     }
 
@@ -33,10 +32,9 @@ class DoublyLinkedList {
             newNode.next = temp;
             temp.prev = newNode;
             this.head = newNode;
+            this.tail.next = newNode;
         }
     }
-
-   
 
     // Insert node after data
     insertAfter(data, search) {
@@ -121,9 +119,11 @@ class DoublyLinkedList {
         while(current != null) {
             console.log(current.data);
             current = current.next;
+            if (current == this.head) {
+                break;
+            }
         }
     }
-
 }
 
-module.exports = DoublyLinkedList;
+module.exports = CircularLinkedList;
