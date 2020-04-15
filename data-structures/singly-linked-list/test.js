@@ -12,8 +12,8 @@ function runTest() {
   linkedList.append(2);
   linkedList.append(3);
   linkedList.append(4);
-  linkedList.prepend(-5);
-  linkedList.prepend(-6);
+  linkedList.insertAtHead(-5);
+  linkedList.insertAtHead(-6);
   
   linkedList.traverseForward();
   

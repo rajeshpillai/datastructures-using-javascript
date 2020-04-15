@@ -23,7 +23,7 @@ class DoublyLinkedList {
     }
 
     // add  data to the beginning of list
-    prepend(data) {
+    insertAtHead(data) {
         let newNode = new Node(data);
         if (this.head === null) {
             this.head = newNode;
