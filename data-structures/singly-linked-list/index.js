@@ -69,8 +69,17 @@ class SinglyLinkedList {
 
     }
 
+    // Delete at head
+    deleteAtHead() {
+        let current = this.head;
+        if (current == null) return false;
+        this.head = current.next;
+        current = null;
+        return true;
+    }
+
     // Delete node by data value
-    delete(data) {
+    deleteByData(data) {
         console.log("DELETE NODE : ", data);
         if (null == data) return false;
         let current = this.head;

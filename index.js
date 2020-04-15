@@ -24,17 +24,23 @@ console.log("found: 3: ", found);
 found = linkedList.find(33);
 console.log("found: 33: ", found);
 
-let deletedNode = linkedList.delete(-6);
+let deletedNode = linkedList.deleteByData(-6);
 console.log("deleted node -6: ", deletedNode);
 linkedList.traverseForward();
 
-deletedNode = linkedList.delete(3);
+deletedNode = linkedList.deleteByData(3);
 console.log("deleted node 3: ", deletedNode);
 linkedList.traverseForward();
 
-deletedNode = linkedList.delete(33);
+// non existent node
+deletedNode = linkedList.deleteByData(33);
 console.log("deleted node 33: ", deletedNode);
 linkedList.traverseForward();
+
+deletedNode = linkedList.deleteAtHead();
+console.log("deleted firstNode: -5 ", deletedNode);
+linkedList.traverseForward();
+
 
 linkedList.insertAfter(9, -5);
 linkedList.traverseForward();
