@@ -1,7 +1,8 @@
 const Node = require("./node");
 
-class SinglyLinkedList {
+class DoublyLinkedList {
     head = null;
+    tail = null;
 
     constructor() {
 
@@ -12,13 +13,12 @@ class SinglyLinkedList {
         let newNode = new Node(data);
         if (this.head === null) {
             this.head = newNode;
-            this.head.next = null;
-        } else {
-            let current = this.head;
-            while (current.next != null) {
-                current = current.next;
-            }  
-            current.next = newNode;
+            this.tail = this.head;
+        } else { //todo
+            let temp = this.tail;
+            temp.next = newNode;
+            newNode.prev = temp;
+            this.tail = newNode;
         }
     }
 
@@ -28,6 +28,7 @@ class SinglyLinkedList {
         if (this.head === null) {
             this.head = newNode;
             this.head.next = null;
+            this.tail = newNode;
         } else {
             let current = this.head;
             newNode.next = current;
@@ -35,14 +36,7 @@ class SinglyLinkedList {
         }
     }
 
-    // Find node by data value
-    find(data) {
-        let current = this.head;
-        while(current !== null && current.data !== data) {
-            current = current.next;
-        }
-        return current;
-    }
+   
 
     // Insert node after data
     insertAfter(data, search) {
@@ -53,18 +47,18 @@ class SinglyLinkedList {
             let temp = current.next;
             current.next = newNode;
             newNode.next = temp;
+            newNode.prev = current;
             return newNode;
         }
 
         let found = this.find(search);
-        console.log("insertAfter: found: ", found);
 
         if (null == found) return null;
 
         let temp = found;
         newNode.next = temp.next;
         found.next = newNode;
-
+        newNode.prev = found;
         return newNode;
 
     }
@@ -108,8 +102,16 @@ class SinglyLinkedList {
             current = null;
         }
 
-
         return false;
+    }
+
+     // Find node by data value
+     find(data) {
+        let current = this.head;
+        while(current !== null && current.data !== data) {
+            current = current.next;
+        }
+        return current;
     }
 
     // Traverse linked list from head to end of list
@@ -136,4 +138,4 @@ class SinglyLinkedList {
     }
 }
 
-module.exports = SinglyLinkedList;
+module.exports = DoublyLinkedList;

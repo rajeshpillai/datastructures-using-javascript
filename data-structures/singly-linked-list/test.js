@@ -5,6 +5,8 @@ function log(...args) {
 }
 
 function runTest() {
+  log("Running test for SinglyLinkedList...");
+  console.log("========================================");
   const linkedList = new SinglyLinkedList();
   linkedList.append(1);
   linkedList.append(2);
