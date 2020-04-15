@@ -38,10 +38,44 @@ class SinglyLinkedList {
     // Find node by data value
     find(data) {
         let current = this.head;
-        while(current.next !== null || current.data === data) {
+        while(current !== null && current.data !== data) {
             current = current.next;
         }
         return current;
+    }
+
+    // Delete node by data value
+    delete(data) {
+        console.log("DELETE NODE : ", data);
+        if (null == data) return false;
+        let current = this.head;
+        
+        if (current.data == data) {
+            this.head = current.next;
+            return true;
+        }
+
+        let previous = null;
+        while(current.next != null) {
+            previous = current;
+            current = current.next;
+            if (current.data == data) {
+                break;
+            }
+        }
+
+        console.log("PREV LINK: ", previous);
+        console.log("CURR LINK:", current);
+     
+        // If previous node exist and data found
+        //   then delete
+        if (previous != null && current.data == data) {
+            previous.next = current.next;
+            current = null;
+        }
+
+
+        return false;
     }
 
     // Traverse linked list from head to end of list
