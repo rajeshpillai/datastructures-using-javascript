@@ -44,6 +44,31 @@ class SinglyLinkedList {
         return current;
     }
 
+    // Insert node after data
+    insertAfter(data, search) {
+        console.log(`Inserting ${data} after ${search}`);
+        let newNode = new Node(data);
+        let current = this.head;
+        if (current.data == search) {
+            let temp = current.next;
+            current.next = newNode;
+            newNode.next = temp;
+            return newNode;
+        }
+
+        let found = this.find(search);
+        console.log("insertAfter: found: ", found);
+
+        if (null == found) return null;
+
+        let temp = found;
+        newNode.next = temp.next;
+        found.next = newNode;
+
+        return newNode;
+
+    }
+
     // Delete node by data value
     delete(data) {
         console.log("DELETE NODE : ", data);

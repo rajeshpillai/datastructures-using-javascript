@@ -36,6 +36,14 @@ deletedNode = linkedList.delete(33);
 console.log("deleted node 33: ", deletedNode);
 linkedList.traverseForward();
 
+linkedList.insertAfter(9, -5);
+linkedList.traverseForward();
 
+linkedList.insertAfter(11, 2);
+linkedList.traverseForward();
+
+// non existent node
+linkedList.insertAfter(12, 13);
+linkedList.traverseForward();
 
 console.log("DONE...");
