@@ -8,7 +8,7 @@ class DoublyLinkedList {
 
     }
 
-    // add  data to the end of list
+    // add / push data to the end of list
     append(data) {
         let newNode = new Node(data);
         if (this.head === null) {
@@ -22,16 +22,16 @@ class DoublyLinkedList {
         }
     }
 
-    // add  data to the beginning of list
+    // add  data to the beginning of list (unshift)
     insertAtHead(data) {
         let newNode = new Node(data);
         if (this.head === null) {
             this.head = newNode;
-            this.head.next = null;
             this.tail = newNode;
         } else {
-            let current = this.head;
-            newNode.next = current;
+            let temp = this.head;
+            newNode.next = temp;
+            temp.prev = newNode;
             this.head = newNode;
         }
     }
@@ -40,7 +40,6 @@ class DoublyLinkedList {
 
     // Insert node after data
     insertAfter(data, search) {
-        console.log(`Inserting ${data} after ${search}`);
         let newNode = new Node(data);
         let current = this.head;
         if (current.data == search) {
@@ -63,18 +62,23 @@ class DoublyLinkedList {
 
     }
 
-    // Delete at head
+    // Delete at head (or shift )
     deleteAtHead() {
         let current = this.head;
-        if (current == null) return false;
-        this.head = current.next;
-        current = null;
+        if (current == null) return undefined;
+        if (this.head == this.tail) {
+            this.head = null;
+            this.tail = null;
+        } else {
+            this.head = current.next;
+            this.head.prev = null;
+            current = null;
+        }
         return true;
     }
 
     // Delete node by data value
     deleteByData(data) {
-        console.log("DELETE NODE : ", data);
         if (null == data) return false;
         let current = this.head;
         
@@ -92,14 +96,14 @@ class DoublyLinkedList {
             }
         }
 
-        console.log("PREV LINK: ", previous);
-        console.log("CURR LINK:", current);
-     
         // If previous node exist and data found
         //   then delete
         if (previous != null && current.data == data) {
             previous.next = current.next;
+            // reset prev
+            current.next.prev = previous.next;
             current = null;
+            return true;
         }
 
         return false;
