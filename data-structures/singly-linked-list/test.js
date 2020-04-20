@@ -26,6 +26,7 @@ function runTest() {
   let deletedNode = linkedList.deleteByData(-6);
   console.log("deleted node -6: ", deletedNode);
   linkedList.traverseForward();
+  console.log("Length: ", linkedList.length);
   
   deletedNode = linkedList.deleteByData(3);
   console.log("deleted node 3: ", deletedNode);
@@ -39,7 +40,7 @@ function runTest() {
   deletedNode = linkedList.deleteAtHead();
   console.log("deleted firstNode: -5 ", deletedNode);
   linkedList.traverseForward();
-  
+  console.log("Length: ", linkedList.length);
   
   linkedList.insertAfter(9, -5);
   linkedList.traverseForward();
@@ -51,8 +52,14 @@ function runTest() {
   linkedList.insertAfter(12, 13);
   linkedList.traverseForward();
   
+  console.log("Length: ", linkedList.length);
+
   linkedList.reverseInPlace();
   console.log("Reversed: ");
+  linkedList.traverseForward();
+
+  console.log("Reversed using 2nd approach: ");
+  linkedList.reverseInPlace2();
   linkedList.traverseForward();
   console.log("DONE...");
 }

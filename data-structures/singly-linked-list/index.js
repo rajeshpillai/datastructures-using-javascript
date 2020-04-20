@@ -1,10 +1,9 @@
 const Node = require("./node");
 
 class SinglyLinkedList {
-    head = null;
-
     constructor() {
-
+        this.head = null;
+        this.length = 0;
     }
 
     // add  data to the end of list
@@ -20,6 +19,7 @@ class SinglyLinkedList {
             }  
             current.next = newNode;
         }
+        this.length ++;
     }
 
     // add  data to the beginning of list
@@ -33,6 +33,7 @@ class SinglyLinkedList {
             newNode.next = current;
             this.head = newNode;
         }
+        this.length ++;
     }
 
     // Find node by data value
@@ -65,6 +66,8 @@ class SinglyLinkedList {
         newNode.next = temp.next;
         found.next = newNode;
 
+        this.length ++;
+
         return newNode;
 
     }
@@ -75,6 +78,8 @@ class SinglyLinkedList {
         if (current == null) return false;
         this.head = current.next;
         current = null;
+
+        this.length--;
         return true;
     }
 
@@ -86,6 +91,7 @@ class SinglyLinkedList {
         
         if (current.data == data) {
             this.head = current.next;
+            this.length--;
             return true;
         }
 
@@ -106,8 +112,8 @@ class SinglyLinkedList {
         if (previous != null && current.data == data) {
             previous.next = current.next;
             current = null;
+            this.length--;
         }
-
 
         return false;
     }
@@ -124,6 +130,7 @@ class SinglyLinkedList {
     // inplace reversal
     reverseInPlace() {
         let current = this.head;
+        if (!current.next) return currrent;
         let prev = null;
         let next = null;
         while (current !== null) {
@@ -133,6 +140,21 @@ class SinglyLinkedList {
             current = next;
         }
         this.head = prev;
+    }
+
+    // Approach 2
+    reverseInPlace2() {
+        let first = this.head;
+        if (!first.next) return first;
+        let second = first.next;
+        while (second) {
+            const temp = second.next;
+            second.next = first;
+            first = second;
+            second = temp;
+        }
+        this.head.next = null;
+        this.head = first;
     }
 }
 
