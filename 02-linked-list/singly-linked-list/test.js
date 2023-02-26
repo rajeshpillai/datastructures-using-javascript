@@ -22,8 +22,6 @@ function runTest() {
    linkedList.insertRecursion(10, 107);  // invalid index
   linkedList.traverseForward();
   
-  return;
-
   let found = linkedList.find(3);
   console.log("found: 3: ", found);
   
