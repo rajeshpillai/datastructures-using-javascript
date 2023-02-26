@@ -22,7 +22,6 @@ function runTest() {
   // linkedList.insertRecursion(10, 8);
   linkedList.traverseForward();
   
-  return; // TODO
 
   let found = linkedList.find(3);
   console.log("found: 3: ", found);
