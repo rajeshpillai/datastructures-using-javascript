@@ -19,9 +19,10 @@ function runTest() {
   // Insert using Recursion
   linkedList.insertRecursion(8, 0);
   linkedList.insertRecursion(9, 4);
-  // linkedList.insertRecursion(10, 8);
+   linkedList.insertRecursion(10, 107);  // invalid index
   linkedList.traverseForward();
   
+  return;
 
   let found = linkedList.find(3);
   console.log("found: 3: ", found);

@@ -74,6 +74,10 @@ class SinglyLinkedList {
 
     // Insert using recursion
     insertRecursion(data, index) {
+        if (index >= this.length) {
+            console.log("Index out of bounds.");
+            return;
+        }
         console.log(`Insert using recursion...`);
         this.head = this.#insertRec(data, index, this.head);
     }
