@@ -1,7 +1,7 @@
-const singlyLinkedListTest = require("./data-structures/singly-linked-list/test.js");
-const doublyLinkedListTest = require("./data-structures/doubly-linked-list/test.js");
-const circularLinkedListTest = require("./data-structures/circular-linked-list/test.js");
+const singlyLinkedListTest = require("./02-linked-list/singly-linked-list/test.js");
+const doublyLinkedListTest = require("./02-linked-list/doubly-linked-list/test.js");
+const circularLinkedListTest = require("./02-linked-list/circular-linked-list/test.js");
 
 singlyLinkedListTest();
-//doublyLinkedListTest();
-//circularLinkedListTest();
+doublyLinkedListTest();
+circularLinkedListTest();

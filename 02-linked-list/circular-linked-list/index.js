@@ -7,7 +7,7 @@ class CircularLinkedList {
     }
 
     // add / push data to the end of list
-    push(data) {
+    append(data) {
         let newNode = new Node(data);
         if (this.head === null) {
             this.head = newNode;

@@ -1,11 +1,9 @@
 const Node = require("./node");
 
 class DoublyLinkedList {
-    head = null;
-    tail = null;
-
     constructor() {
-
+        this.head = null;
+        this.tail = null;
     }
 
     // add / push data to the end of list

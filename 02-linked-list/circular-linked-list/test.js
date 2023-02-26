@@ -8,10 +8,10 @@ function runTest() {
   log("Running test for CircularLinkedList...");
   console.log("========================================");
   const linkedList = new CircularLinkedList();
-  linkedList.push(1);
-  linkedList.push(2);
-  linkedList.push(3);
-  linkedList.push(4);
+  linkedList.append(1);
+  linkedList.append(2);
+  linkedList.append(3);
+  linkedList.append(4);
   linkedList.insertAtHead(0);
   
   linkedList.traverseForward();
