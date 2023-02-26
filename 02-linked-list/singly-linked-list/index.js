@@ -72,6 +72,24 @@ class SinglyLinkedList {
 
     }
 
+    // Insert using recursion
+    insertRecursion(data, index) {
+        console.log(`Insert using recursion...`);
+        this.head = this.#insertRec(data, index, this.head);
+    }
+
+    // Private method
+    #insertRec(data, index, node) {
+        console.log(`Index ${index}...`);
+        if (index == 0) {
+            const temp = new Node(data, node);
+            this.length++;
+            return temp;
+        }            
+        node.next = this.#insertRec(data, --index, node.next);
+        return node;
+    }
+
     // Delete at head
     deleteAtHead() {
         let current = this.head;

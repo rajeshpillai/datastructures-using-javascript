@@ -14,9 +14,16 @@ function runTest() {
   linkedList.append(4);
   linkedList.insertAtHead(-5);
   linkedList.insertAtHead(-6);
-  
+
+
+  // Insert using Recursion
+  linkedList.insertRecursion(8, 0);
+  linkedList.insertRecursion(9, 4);
+  // linkedList.insertRecursion(10, 8);
   linkedList.traverseForward();
   
+  return; // TODO
+
   let found = linkedList.find(3);
   console.log("found: 3: ", found);
   
@@ -63,6 +70,8 @@ function runTest() {
   linkedList.reverseInPlace2();
   linkedList.traverseForward();
   console.log("DONE...");
+
+  
 }
 
 module.exports = runTest;
