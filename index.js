@@ -3,5 +3,5 @@ const doublyLinkedListTest = require("./02-linked-list/doubly-linked-list/test.j
 const circularLinkedListTest = require("./02-linked-list/circular-linked-list/test.js");
 
 singlyLinkedListTest();
-doublyLinkedListTest();
-circularLinkedListTest();
+// doublyLinkedListTest();
+// circularLinkedListTest();

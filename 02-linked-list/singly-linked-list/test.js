@@ -54,6 +54,7 @@ function runTest() {
   
   console.log("Length: ", linkedList.length);
 
+  console.log("Reversed using 1st approach: ");
   linkedList.reverseInPlace();
   console.log("Reversed: ");
   linkedList.traverseForward();
