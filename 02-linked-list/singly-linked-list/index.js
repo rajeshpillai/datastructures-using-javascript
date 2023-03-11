@@ -178,6 +178,38 @@ class SinglyLinkedList {
         this.head.next = null;
         this.head = first;
     }
+
+    // My approach: todo
+    reverseInPlace3() {
+        let start = this.head;
+        let next = start.next;
+        while(next) {
+            let nextNext = next.next;
+            next.next = start;
+            start = next;
+            next = nextNext;
+        }
+        this.head.next = null;
+        this.head = start;    
+        console.log(JSON.stringify(this.head, null, 2));
+    }
+
+    // todo
+    reverseUsingRecursion() {
+        this.#reverseR(this.head);
+    }
+
+    #reverseR(current) {
+        let q = null;
+        if (current.next == null) {
+            this.head = current;
+            return;
+        } 
+        this.#reverseR(current.next);
+        q = current.next;
+        q.next = current;
+        current.next = null;
+    }
 }
 
 module.exports = SinglyLinkedList;

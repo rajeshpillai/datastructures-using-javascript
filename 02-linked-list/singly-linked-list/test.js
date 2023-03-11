@@ -12,13 +12,12 @@ function runTest() {
   linkedList.append(2);
   linkedList.append(3);
   linkedList.append(4);
-  linkedList.insertAtHead(-5);
-  linkedList.insertAtHead(-6);
-
+  linkedList.insertAtHead(0);
+  
 
   // Insert using Recursion
-  linkedList.insertRecursion(8, 0);
-  linkedList.insertRecursion(9, 4);
+  linkedList.insertRecursion(5, 5);
+  linkedList.insertRecursion(6, 6);
    linkedList.insertRecursion(10, 107);  // invalid index
   linkedList.traverseForward();
   
@@ -67,9 +66,24 @@ function runTest() {
   console.log("Reversed using 2nd approach: ");
   linkedList.reverseInPlace2();
   linkedList.traverseForward();
-  console.log("DONE...");
 
-  
+  linkedList.deleteByData(11);
+  linkedList.deleteByData(4);
+
+  linkedList.append(3);
+  linkedList.append(4);
+  linkedList.append(5);
+  linkedList.traverseForward();
+
+  console.log("Reversed using my approach: ");
+  linkedList.reverseInPlace3();
+  linkedList.traverseForward();
+
+  console.log("Reversed using my recursion: ");
+  linkedList.reverseUsingRecursion();
+  linkedList.traverseForward();
+
+  console.log("DONE...");
 }
 
 module.exports = runTest;
