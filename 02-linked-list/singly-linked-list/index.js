@@ -191,7 +191,7 @@ class SinglyLinkedList {
         }
         this.head.next = null;
         this.head = start;    
-        console.log(JSON.stringify(this.head, null, 2));
+        // console.log(JSON.stringify(this.head, null, 2));
     }
 
     // todo
