@@ -83,6 +83,20 @@ function runTest() {
   linkedList.reverseUsingRecursion();
   linkedList.traverseForward();
 
+
+  console.log("Sorting: Selection Sort  Data Swapping (original)"); 
+  linkedList.append(500);
+  linkedList.append(509);
+  linkedList.append(100);
+  linkedList.append(300);
+
+  linkedList.traverseForward();
+
+  linkedList.selectionSortDataSwapping();
+
+  console.log("Sorting: Selection Sort (sorted)"); 
+  linkedList.traverseForward();
+
   console.log("DONE...");
 }
 

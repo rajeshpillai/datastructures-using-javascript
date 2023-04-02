@@ -210,6 +210,36 @@ class SinglyLinkedList {
         q.next = current;
         current.next = null;
     }
+
+    /*
+    - Input: a list of sortable items A.
+    - Let n be the length of A.
+    - Iterate through the list, starting from the first element:
+        --  Find the index of the minimum value in the remaining unsorted portion of the list, by comparing each element to the current minimum.
+        -- Swap the current element with the minimum value, if the minimum value is not already in its sorted position.
+    - Repeat the previous step for each subsequent unsorted element, until the entire list is sorted in ascending order.
+    - Output: the sorted list.
+    */
+
+    selectionSortDataSwapping() {
+        let current = this.head;
+        
+        while(current) {
+            let min = current;
+            let next = current.next;
+            while(next) {
+                if (next.data < min.data) {
+                    min = next;
+                }
+                next = next.next;
+            }
+            // Swap 
+            let temp = current.data;
+            current.data = min.data;
+            min.data = temp;
+            current = current.next;
+        }
+    }
 }
 
 module.exports = SinglyLinkedList;
